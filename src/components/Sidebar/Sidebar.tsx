@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 import { IoCalendarOutline, IoCheckboxOutline, IoListOutline } from 'react-icons/io5'
 import { CiLogout } from 'react-icons/ci'
-import { SideBarItem } from './SidebarItem/SideBarItem'
+import { SideBarItem } from '@/components'
 
 interface Props {
     title: string,

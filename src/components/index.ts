@@ -1,8 +1,9 @@
-export * from "./Todos/TodoItem/TodoItem";
-export * from "./Todos/TodosGrid";
-export * from "./WidgetItem/WidGetItem";
-export * from "./TopMenu/TopMenu";
-export * from "./WidgetItem/WidGetItem";
-export * from "./Sidebar/SidebarItem/SideBarItem";
-export * from "./Sidebar/Sidebar";
+export { Sidebar } from "./Sidebar/Sidebar"
+export { SideBarItem } from "./Sidebar/SidebarItem/SideBarItem"
+export { TodoItem } from "./Todos/TodoItem/TodoItem"
+export { TodosGrid } from "./Todos/TodosGrid"
+export { NewTodo } from "./Todos/newTodo/NewTodo"
+export { TopMenu } from "./TopMenu/TopMenu"
+export { WidGetItem } from "./WidgetItem/WidGetItem"
+
 
