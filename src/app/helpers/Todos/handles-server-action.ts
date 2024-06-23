@@ -31,4 +31,16 @@ export const createTodoWithServerAction = async (description: string) => {
         throw new Error("Error when it try to create Todo");
 
     }
-} 
+}
+
+export const deleteWithServerAction = async () => {
+    try {
+        const result = await prisma.todo.deleteMany({
+            where: { complete: true },
+        })
+        revalidateTag("/dashboard/server-todos")
+        return result
+    } catch (error) {
+        throw new Error(`error when a try to delete WithServerAction ${error}`);
+    }
+}

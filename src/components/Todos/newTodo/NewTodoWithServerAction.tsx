@@ -1,7 +1,7 @@
 'use client';
 
 import { createTodo, deleteTodoTrues } from "@/app/helpers/Todos/handlers";
-import { createTodoWithServerAction } from "@/app/helpers/Todos/handles-server-action";
+import { createTodoWithServerAction, deleteWithServerAction } from "@/app/helpers/Todos/handles-server-action";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { IoTrashOutline } from "react-icons/io5";
 import * as yup from 'yup';
@@ -11,12 +11,10 @@ import * as yup from 'yup';
 
 export const NewTodoWithServerAction = () => {
 
-    // const router = useRouter()
 
     const handleDelete = async () => {
-        // console.log("llame a borrar");
-        // await deleteTodoTrues()
-        // router.refresh()
+        const resp = await deleteWithServerAction()
+        console.log("i have just delete registers", resp);
     }
 
 
