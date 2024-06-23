@@ -47,6 +47,8 @@ export const fetchTodos = async (): Promise<any> => {
     // const data = await fetch("http://localhost:3000/api/todos", {
     //   cache: 'no-cache'
     // }).then(res => res.json())
-    const data = prisma.todo.findMany({orderBy: {description:"asc"} })
+    const data = prisma.todo.findMany({ orderBy: { description: "asc" } })
     return data
-  }
+}
+
+

@@ -7,12 +7,12 @@ interface Props {
     id: string;
     description: string;
     complete: boolean;
-    toggleTodo: (id: string, complete: boolean) => Promise<Todo|void>
+    toggleTodo: (id: string, complete: boolean) => Promise<Todo | void>
 }
 
 export const TodoItem = ({ id, description, complete, toggleTodo }: Props) => {
     return (
-        <div className={`${complete} ? ${style.todoDone} : ${style.todoPending} grid grid-cols-1 sm:grid-cols-3 gap-2`}>
+        <div className={`${complete ? style.todoDone : style.todoPending} grid grid-cols-1 sm:grid-cols-3 gap-2`}>
             <div className="flex flex-col sm:flex-row justify-start items-center gap-4 ">
                 <div
                     onClick={() => toggleTodo(id, !complete)}

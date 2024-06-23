@@ -1,8 +1,7 @@
 "use client"
 import { Todo } from '@prisma/client'
-import { createTodo, upDateTodo } from '@/app/helpers/Todos/handlers';
-import { useRouter } from 'next/navigation';
 import { NewTodo, TodoItem } from '@/components';
+import { upDateTodoWithServerAction } from '@/app/helpers/Todos/handles-server-action';
 
 
 interface Props {
@@ -13,12 +12,10 @@ interface Props {
 
 export const TodosGridWithServerAction = ({ todos = [] }: Props) => {
 
-    const router = useRouter()
     const toggleTodo = async (id: string, complete: boolean) => {
-        const updateDates = await upDateTodo(id, complete)
-        console.log({ updateDates });
-        router.refresh()
+        await upDateTodoWithServerAction(id, complete)
     }
+
     return (
         <div >
             <div className='w-full px-3 mx-5 mb-5'>
