@@ -11,7 +11,7 @@ interface Props {
 
 
 
-export const TodosGrid = ({ todos = [] }: Props) => {
+export const TodosGridWithServerAction = ({ todos = [] }: Props) => {
 
     const router = useRouter()
     const toggleTodo = async (id: string, complete: boolean) => {
@@ -32,4 +32,3 @@ export const TodosGrid = ({ todos = [] }: Props) => {
         </div>
     )
 }
-

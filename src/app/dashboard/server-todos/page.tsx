@@ -1,5 +1,6 @@
 import { fetchTodos } from "@/app/helpers/Todos/handlers";
 import { TodosGrid } from "@/components";
+import { TodosGridWithServerAction } from "@/components/Todos/TodosGridWithServerAction";
 
 export const metadata = {
   title: 'Title RestTodosPage',
@@ -8,12 +9,12 @@ export const metadata = {
 
 
 
-export default async function RestTodosPage() {
+export default async function ServertodosPage() {
 
   const data = await fetchTodos();
   return (
     <div>
-      <TodosGrid todos={data} />
+      <TodosGridWithServerAction todos={data} />
     </div>
   );
 }

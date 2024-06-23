@@ -22,7 +22,7 @@ const sidebarItems: Array<Props> = [{
     icon: <IoCheckboxOutline size={30} />
 }, {
 
-    path: "/server-todos",
+    path: "/dashboard/server-todos",
     title: "Server-Todos",
     icon: <IoListOutline size={30} />
 }

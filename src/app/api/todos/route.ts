@@ -32,9 +32,6 @@ const postSchema = yup.object({
 });
 
 export async function POST(request: Request) {
-
-
-
     try {
         const body = await request.json()
         const { complete, description } = await postSchema.validate(body);
@@ -45,5 +42,20 @@ export async function POST(request: Request) {
 
     } catch (error) {
         return NextResponse.json(error, { status: 401 });
+    }
+}
+
+
+
+export async function DELETE(request: Request) {
+    try {
+
+        await prisma.todo.deleteMany({
+            where: { complete: true }
+        })
+        return NextResponse.json({response:"Url Works"});
+
+    } catch (error) {
+        return NextResponse.json(error, { status: 400 });
     }
 }
