@@ -1,7 +1,7 @@
 "use client"
 import { Todo } from '@prisma/client'
-import { NewTodo, TodoItem } from '@/components';
-import { upDateTodoWithServerAction } from '@/app/helpers/Todos/handles-server-action';
+import { TodoItemWithServerAction } from './TodoItem/TodoItemWithServerAction';
+import { NewTodoWithServerAction } from './newTodo/NewTodoWithServerAction';
 
 
 interface Props {
@@ -12,18 +12,15 @@ interface Props {
 
 export const TodosGridWithServerAction = ({ todos = [] }: Props) => {
 
-    const toggleTodo = async (id: string, complete: boolean) => {
-        await upDateTodoWithServerAction(id, complete)
-    }
 
     return (
         <div >
             <div className='w-full px-3 mx-5 mb-5'>
-                <NewTodo />
+                <NewTodoWithServerAction />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                 {todos.map(todo =>
-                    <TodoItem key={todo.id} {...todo} toggleTodo={toggleTodo} />
+                    <TodoItemWithServerAction key={todo.id} todo={todo} />
                 )}
             </div>
         </div>
