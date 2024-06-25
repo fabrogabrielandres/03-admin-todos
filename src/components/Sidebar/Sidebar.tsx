@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { IoCalendarOutline, IoCheckboxOutline, IoListOutline } from 'react-icons/io5'
+import { IoCalendarOutline, IoCheckboxOutline, IoListOutline, IoBriefcaseOutline } from 'react-icons/io5'
 import { CiLogout } from 'react-icons/ci'
 import { SideBarItem } from '@/components'
 
@@ -25,6 +25,12 @@ const sidebarItems: Array<Props> = [{
     path: "/dashboard/server-todos",
     title: "Server-Todos",
     icon: <IoListOutline size={30} />
+}
+    , {
+
+    path: "/dashboard/cookies",
+    title: "cookies",
+    icon: <IoBriefcaseOutline size={30} />
 }
 ]
 

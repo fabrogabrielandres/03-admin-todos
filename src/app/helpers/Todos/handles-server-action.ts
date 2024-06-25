@@ -12,9 +12,7 @@ const sleep = async (delay: number = 0) => {
 
 export const upDateTodoWithServerAction = async (id: string, complete: boolean) => {
     try {
-        await sleep(3)
-        console.log("que onda");
-
+        // await sleep(3)
         const updatedTodo = await prisma.todo.update({
             where: { id },
             data: { complete }

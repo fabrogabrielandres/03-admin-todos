@@ -20,9 +20,11 @@ export const TodoItemWithServerAction = ({ todo }: Props) => {
             )
             await upDateTodoWithServerAction(useOptimisticTodo.id, !useOptimisticTodo.complete)
         } catch (error) {
-
+            
+            console.log(error);
+            
             startTransition(
-                () => toggleTodoOptimistic(!useOptimisticTodo.complete)
+                () => toggleTodoOptimistic(todo.complete)
             )
         }
     }

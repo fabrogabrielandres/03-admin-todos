@@ -1,5 +1,6 @@
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
 import { fetchTodos } from "@/app/helpers/Todos/handlers";
-import { TodosGrid } from "@/components";
 import { TodosGridWithServerAction } from "@/components/Todos/TodosGridWithServerAction";
 
 export const metadata = {
