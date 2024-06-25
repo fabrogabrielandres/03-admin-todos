@@ -1,5 +1,7 @@
 import { TabBar } from "@/components/TabBar/TabBar";
-
+import { cookies } from "next/headers";
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
 
 export const metadata = {
     title: 'Cookies Page',
@@ -7,8 +9,8 @@ export const metadata = {
 };
 
 export default function CookiesPage() {
-    // const cookieStore = cookies();
-    // const cookieTab = cookieStore.get('selectedTab')?.value ?? '1';
+    const cookieStore = cookies();
+    const cookieTab = Number(cookieStore.get('selectedTab')?.value ?? '1');
 
 
     return (
@@ -16,8 +18,7 @@ export default function CookiesPage() {
 
             <div className="flex flex-col">
                 <span className="text-3xl">Tabs</span>
-                {/* <TabBar currentTab={+cookieTab} /> */}
-                <TabBar />
+                <TabBar currentTab={cookieTab} />
             </div>
 
 
