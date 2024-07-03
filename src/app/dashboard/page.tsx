@@ -1,11 +1,9 @@
-import { WidGetItem } from "@/components";
+import Image from 'next/image'
 
-
-
-export default function DashBoardPage() {
+export default function Home() {
   return (
-    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      <WidGetItem />
-    </div>
-  );
+    <>
+      <span className='text-5xl'>Hola Mundo</span>
+    </>
+  )
 }

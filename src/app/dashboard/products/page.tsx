@@ -1,4 +1,5 @@
-import { ProductCard } from "@/components";
+
+import { ProductCard } from '@/components';
 import { mockdataProducts } from '../../../components/Products/mockdataProducts/mockdataProducts';
 
 
