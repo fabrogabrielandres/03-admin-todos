@@ -1,9 +1,26 @@
-import Image from 'next/image'
+import { WidGetItem } from "@/components";
+import { auth } from "../api/auth/[...nextauth]/route";
+import { redirect } from "next/navigation";
 
-export default function Home() {
+
+
+
+export default async function Home() {
+
+  const session = await auth();
+
+  if (!session?.user) {
+    console.log("no estoy log");
+
+    redirect("/api/auth/signin")
+  }
+
+
   return (
     <>
-      <span className='text-5xl'>Hola Mundo</span>
+      <WidGetItem title="hola">
+
+      </WidGetItem>
     </>
   )
 }

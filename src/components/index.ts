@@ -7,5 +7,5 @@ export { TodoItem } from "./Todos/TodoItem/TodoItem"
 export { TodosGrid } from "./Todos/TodosGrid"
 export { NewTodo } from "./Todos/newTodo/NewTodo"
 
-export { WidGetItem } from "./WidgetItem/WidGetItem"
+export { WidGetItem } from './WidgetItem/WidGetItem';
 
