@@ -18,7 +18,7 @@ export default async function Home() {
 
   return (
     <>
-      <WidGetItem title="hola">
+      <WidGetItem title={JSON.stringify(session,null,2)}>
 
       </WidGetItem>
     </>
