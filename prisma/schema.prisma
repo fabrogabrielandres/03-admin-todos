@@ -22,22 +22,19 @@ model Todo {
 }
 
 model Account {
-  id                String   @id @default(uuid())
-  userId            String   @map("user_id")
+  id                String  @id @default(uuid())
+  userId            String  @map("user_id")
   type              String
-  isActive          Boolean  @default(true)
-  roles             String[] @default(["client"])
   provider          String
-  providerAccountId String   @map("provider_account_id")
-  refresh_token     String?  @db.Text
-  access_token      String?  @db.Text
+  providerAccountId String  @map("provider_account_id")
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
   expires_at        Int?
   token_type        String?
   scope             String?
-  id_token          String?  @db.Text
+  id_token          String? @db.Text
   session_state     String?
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
   @@map("accounts")
@@ -61,6 +58,8 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  isActive      Boolean   @default(true)
+  roles         String[]  @default(["client"])
 
   @@map("users")
 }

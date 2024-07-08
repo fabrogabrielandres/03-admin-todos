@@ -49,7 +49,9 @@ const sidebarItems: Array<Props> = [{
 
 export const Sidebar = async () => {
 
-    const session = await auth()
+    const session = await auth();
+    const rolesUser = session?.user?.roles;
+
 
 
 
@@ -69,7 +71,7 @@ export const Sidebar = async () => {
                     <Image src={session?.user?.image ?? ""} alt="tailus logo" width={100} height={100} className="w-10 h-10 m-auto rounded-full object-cover lg:w-28 lg:h-28" />
 
                     <h5 className="hidden mt-4 text-xl font-semibold text-gray-600 lg:block">{session?.user?.name ?? ""}</h5>
-                    <span className="hidden text-gray-400 lg:block">Admin</span>
+                    <span className="hidden text-gray-400 lg:block">{rolesUser?.join(",")}</span>
                 </div>
 
                 <ul className="space-y-2 tracking-wide mt-8">
